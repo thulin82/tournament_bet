@@ -1,0 +1,9 @@
+{
+    "name": "thulin82/tournament_bet",
+    "description": "Tournament Bet Web Page",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5",
+        "twbs/bootstrap": "3.*"
+    }
+}

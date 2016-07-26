@@ -1,3 +1,5 @@
-#During development
+# Package handling
+composer.lock
+vendor
 
 #Tests
