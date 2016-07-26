@@ -2,6 +2,14 @@
 
 * [PHP](http://php.net/) - The latest version of PHP is highly recommended
 
+
+## Dependencies (Composer)
+```CMD
+cd tournament_bet
+composer validate
+composer install
+```
+
 ## Database Structure
 
 ### Tables
