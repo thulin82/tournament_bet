@@ -29,10 +29,38 @@ class InitDatabase extends AbstractMigration
     {
         //Create the first table
         $table = $this->table('Bets');
-        $table->addColumn('MatchesidMatch', 'integer')
-              ->addColumn('UseruserID', 'integer')
+        $table->addColumn('Matchesid', 'integer')
+              ->addColumn('Userid', 'integer')
               ->addColumn('betChar', 'string')
               ->addColumn('betResult', 'string')
               ->create();
+              
+        //Create the second table
+        $table2 = $this->table('Matches');
+        $table2->addColumn('Tournamentid', 'integer')
+               ->addColumn('dateMatchDate', 'datetime')
+               ->addColumn('idTeamHome', 'integer')
+               ->addColumn('idTeamAway', 'integer')
+               ->addColumn('idGoalsHome', 'integer')
+               ->addColumn('idGoalsAway', 'integer')
+               ->create();
+               
+        //Create the third table
+        $table3 = $this->table('Teams');
+        $table3->addColumn('nameTeam', 'string')
+               ->addColumn('flagTeam', 'string')
+               ->create();
+               
+        //Create the fourth table
+        $table4 = $this->table('Tournament');
+        $table4->addColumn('nameTournament', 'string')
+               ->create();
+               
+        //Create the fifth table
+        $table3 = $this->table('User');
+        $table3->addColumn('userName', 'string')
+               ->addColumn('userMail', 'string')
+               ->addColumn('userSecret', 'string')
+               ->create();
     }
 }
