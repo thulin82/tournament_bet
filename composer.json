@@ -2,8 +2,18 @@
     "name": "thulin82/tournament_bet",
     "description": "Tournament Bet Web Page",
     "license": "MIT",
+    "authors": [
+            {
+                "name": "Markus Thulin",
+                "email": "macky_b@hotmail.com"
+            }
+    ],
     "require": {
-        "php": ">=5.5",
-        "twbs/bootstrap": "3.*"
+        "php": ">=7.0",
+        "twbs/bootstrap": "3.3.*",
+        "robmorgan/phinx": "v0.8.*"
+    },
+    "autoload": {
+        "psr-4": {"Thulin\\": "src/"}
     }
 }

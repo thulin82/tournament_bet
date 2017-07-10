@@ -1,5 +1,6 @@
 # Package handling
-composer.lock
 vendor
 
 #Tests
+coverage.clover
+report
