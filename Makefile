@@ -68,7 +68,7 @@ database-migrate:
 .PHONY: database-seed
 database-seed:
 	@$(call HELPTEXT,$@)
-	vendor/bin/phinx seed:run
+	vendor/bin/phinx seed:run -e development
 
 
 # ----------------------------------------------------------------------------
