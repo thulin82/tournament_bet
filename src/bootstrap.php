@@ -9,22 +9,6 @@ function myExceptionHandler($exception)
 }
 set_exception_handler('myExceptionHandler');
 
-
-/**
- * Autoloader
- *
- */
-function Autoloader($class)
-{
-    $path = "../src/{$class}/{$class}.php";
-    if (is_file($path)) {
-        include($path);
-    } else {
-        throw new Exception("Classfile '{$class}' does not exists.");
-    }
-}
-spl_autoload_register('Autoloader');
-
 /**
  * Print
  *

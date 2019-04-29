@@ -14,6 +14,12 @@ ini_set('output_buffering', 0);   // Do not buffer outputs, write directly
 include('../src/bootstrap.php');
 
 /**
+ * Include autoloader.
+ *
+ */
+include('../vendor/autoload.php');
+
+/**
  * Start the session.
  *
  */
