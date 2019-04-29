@@ -84,14 +84,21 @@ test: test-phpunit test-phpcs
 .PHONY: test-phpunit
 test-phpunit:
 	@$(call HELPTEXT,$@)
-	phpunit
+	vendor/bin/phpunit
 
 
 # target: test-phpcs              - Run PHP Code Sniffer according to phpcs.xml.
 .PHONY: test-phpcs
 test-phpcs:
 	@$(call HELPTEXT,$@)
-	phpcs --standard=.phpcs.xml
+	vendor/bin/phpcs --standard=.phpcs.xml
+	
+	
+# target: test-phpstan            - Run PHPStan according to default model
+.PHONY: test-phpstan
+test-phpstan:
+	@$(call HELPTEXT,$@)
+	vendor/bin/phpstan analyze src
 
 
 # ----------------------------------------------------------------------------
@@ -102,7 +109,7 @@ test-phpcs:
 .PHONY: composer-install
 composer-install:
 	@$(call HELPTEXT,$@)
-	if [ -f composer.json ]; then composer install; fi
+	composer install
 
 
 
@@ -110,4 +117,12 @@ composer-install:
 .PHONY: composer-update
 composer-update:
 	@$(call HELPTEXT,$@)
-	if [ -f composer.json ]; composer update; fi
+	composer update
+
+
+
+# target: composer-check          - Check composer packages compared to latest
+.PHONY: composer-check
+composer-check:
+	@$(call HELPTEXT,$@)
+	composer outdated
