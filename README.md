@@ -1,3 +1,6 @@
+# [Tournament Bet](https://github.com/thulin82/tournament_bet)
+[![Build Status](https://travis-ci.com/thulin82/tournament_bet.svg?branch=master)](https://travis-ci.com/thulin82/tournament_bet)
+
 ## Requirements
 
 * [PHP](http://php.net/) - The latest version of PHP is highly recommended
