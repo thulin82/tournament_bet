@@ -1,5 +1,8 @@
 # [Tournament Bet](https://github.com/thulin82/tournament_bet)
 [![Build Status](https://travis-ci.com/thulin82/tournament_bet.svg?branch=master)](https://travis-ci.com/thulin82/tournament_bet)
+[![Build Status](https://scrutinizer-ci.com/g/thulin82/tournament_bet/badges/build.png?b=master)](https://scrutinizer-ci.com/g/thulin82/tournament_bet/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/thulin82/tournament_bet/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/thulin82/tournament_bet/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/thulin82/tournament_bet/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/thulin82/tournament_bet/?branch=master)
 
 ## Requirements
 
