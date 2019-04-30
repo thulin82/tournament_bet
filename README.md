@@ -12,12 +12,12 @@
 
 ## Install
 #### Dependencies
-```CMD
-make composer-install
+```
+$ make composer-install
 ```
 #### Run database migrations and seed with test data
-```CMD
-make database
+```
+$ make database
 ```
 
 

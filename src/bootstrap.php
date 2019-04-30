@@ -2,6 +2,9 @@
 /**
  * Exception handler.
  *
+ * @param mixed $exception Exception
+ *
+ * @return void
  */
 function myExceptionHandler($exception)
 {
@@ -12,6 +15,9 @@ set_exception_handler('myExceptionHandler');
 /**
  * Print
  *
+ * @param mixed $content Stuff to print
+ *
+ * @return void
  */
 function prePrint($content)
 {
