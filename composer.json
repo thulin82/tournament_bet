@@ -19,5 +19,11 @@
     },
     "autoload": {
         "psr-4": {"": ["src/", "test/"]}
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "rm -rf webroot/bootstrap",
+            "cp -R vendor/twbs/bootstrap/dist webroot/bootstrap"
+        ]
     }
 }

@@ -4,3 +4,6 @@ vendor
 #Tests
 coverage.clover
 report
+
+#Bootstrap files
+webroot/bootstrap/*
