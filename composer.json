@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": ">=7.1",
-        "twbs/bootstrap": "3.4.*",
+        "twbs/bootstrap": "4.3.*",
         "robmorgan/phinx": "v0.8.*",
         "fzaninotto/faker": "v1.6.*",
         "phpstan/phpstan": "v0.11.*",
