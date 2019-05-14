@@ -39,7 +39,7 @@ class CDatabase
      *
      * @return self
      */
-    public function connect() : object
+    public function connect()
     {
         if ($this->db) {
             return $this;
