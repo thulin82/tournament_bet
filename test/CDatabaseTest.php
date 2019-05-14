@@ -94,6 +94,18 @@ class CDatabaseTest extends TestCase
     }
 
     /**
+     * Testcase
+     *
+     * @return void
+     */
+    public function testCreateTable()
+    {
+        $sql = 'CREATE TABLE test (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, age INTEGER, text VARCHAR(20))';
+        $res = $this->_db->execute($sql);
+        $this->assertInstanceOf("CDatabase", $res);
+    }
+
+    /**
      * Test Dummy
      *
      * @return void

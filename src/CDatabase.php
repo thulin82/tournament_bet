@@ -61,6 +61,25 @@ class CDatabase
 
         return $this;
     }
+
+    /**
+     * Execute
+     *
+     * @param string $query  Query to execute
+     * @param array  $params [description]
+     *
+     * @return self
+     */
+    public function execute(string $query, array $params = array())
+    {
+        $this->stmt = $this->db->prepare($query);
+        $res = $this->stmt->execute($params);
+
+        if (!$res) {
+            throw new Exception("No result!");
+        }
+        return $this;
+    }
     
     /**
      * ExecuteQueryFetchAll
@@ -70,7 +89,7 @@ class CDatabase
      *
      * @return array $res
      */
-    public function executeQueryFetchAll(string $query, array $params = array()) : array
+    public function executeQueryFetchAll(string $query, array $params = array())
     {
         $this->stmt = $this->db->prepare($query);
         $this->stmt->execute($params);
@@ -86,7 +105,7 @@ class CDatabase
      *
      * @return mixed $res
      */
-    public function executeQueryFetch(string $query, array $params = array()) : stdClass
+    public function executeQueryFetch(string $query, array $params = array())
     {
         $this->stmt = $this->db->prepare($query);
         $this->stmt->execute($params);
