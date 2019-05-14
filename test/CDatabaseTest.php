@@ -62,6 +62,38 @@ class CDatabaseTest extends TestCase
     }
 
     /**
+     * Testcase
+     *
+     * @expectedException Exception
+     *
+     * @return void
+     */
+    public function testMissingDSN()
+    {
+        $db = new CDatabase([]);
+        $db->connect();
+    }
+
+    /**
+     * Testcase
+     *
+     * @expectedException PDOException
+     *
+     * @return void
+     */
+    public function testPDOExeption()
+    {
+        $array = array(
+                  'dsn'         => 'pdo:::::',
+                  'username'    => '',
+                  'password'    => '',
+                  'fetch_style' => PDO::FETCH_OBJ,
+                 );
+        $db = new CDatabase($array);
+        $db->connect();
+    }
+
+    /**
      * Test Dummy
      *
      * @return void

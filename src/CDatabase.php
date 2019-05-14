@@ -1,5 +1,4 @@
 <?php
-use Nette\Neon\Exception;
 
 class CDatabase
 {
