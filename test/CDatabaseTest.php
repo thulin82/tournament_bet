@@ -106,6 +106,19 @@ class CDatabaseTest extends TestCase
     }
 
     /**
+     * Testcase
+     *
+     * @expectedException Exception
+     *
+     * @return void
+     */
+    public function testInvalidQuery()
+    {
+        $sql = 'FREATE TABLE testytesty';
+        $res = $this->_db->execute($sql);
+    }
+
+    /**
      * Test Dummy
      *
      * @return void

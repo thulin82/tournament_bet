@@ -68,17 +68,17 @@ class CDatabase
      * @param string $query  Query to execute
      * @param array  $params [description]
      *
-     * @return self
+     * @return array $res
      */
     public function execute(string $query, array $params = array())
     {
         $this->stmt = $this->db->prepare($query);
-        $res = $this->stmt->execute($params);
-
-        if (!$res) {
+        try {
+            $res = $this->stmt->execute($params);
+        } catch (Exception e) {
             throw new Exception("No result!");
         }
-        return $this;
+        return $res;
     }
     
     /**
