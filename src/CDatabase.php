@@ -75,7 +75,7 @@ class CDatabase
         $this->stmt = $this->db->prepare($query);
         try {
             $res = $this->stmt->execute($params);
-        } catch (Exception e) {
+        } catch (Exception $e) {
             throw new Exception("No result!");
         }
         return $res;
