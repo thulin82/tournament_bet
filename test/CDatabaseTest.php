@@ -102,20 +102,7 @@ class CDatabaseTest extends TestCase
     {
         $sql = 'CREATE TABLE test (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, age INTEGER, text VARCHAR(20))';
         $res = $this->_db->execute($sql);
-        $this->assertInstanceOf("CDatabase", $res);
-    }
-
-    /**
-     * Testcase
-     *
-     * @expectedException Exception
-     *
-     * @return void
-     */
-    public function testInvalidQuery()
-    {
-        $sql = 'FREATE TABLE testytesty';
-        $res = $this->_db->execute($sql);
+        $this->assertTrue($res);
     }
 
     /**
