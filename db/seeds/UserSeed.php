@@ -14,13 +14,12 @@ class UserSeed extends AbstractSeed
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
         $data = [];
         for ($i = 0; $i < 10; $i++) {
             $data[] = [
-                'userName'      => $faker->name,
-                'userMail'      => $faker->email,
-                'userSecret'    => $faker->numberBetween(1000, 9999),
+                'userName'      => 'userName' . $i,
+                'userMail'      => 'userMail' . $i . '@mail.com',
+                'userSecret'    => 'userSecret' . $i,
             ];
         }
         $this->insert('User', $data);
