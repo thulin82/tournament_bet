@@ -43,7 +43,7 @@ class CDatabaseTest extends TestCase
      *
      * @return void
      */
-    public function testAllowMultipleCallToConnect()
+    public function testAllowMultipleCallToConnect() : void
     {
         $db = $this->_db->connect();
         $db = $this->_db->connect();
@@ -55,7 +55,7 @@ class CDatabaseTest extends TestCase
      *
      * @return void
      */
-    public function testCreateObject()
+    public function testCreateObject() : void
     {
         $db = new CDatabase([]);
         $this->assertInstanceOf("CDatabase", $db);
@@ -68,8 +68,9 @@ class CDatabaseTest extends TestCase
      *
      * @return void
      */
-    public function testMissingDSN()
+    public function testMissingDSN() : void
     {
+        $this->expectException(Exception::class);
         $db = new CDatabase([]);
         $db->connect();
     }
@@ -81,8 +82,9 @@ class CDatabaseTest extends TestCase
      *
      * @return void
      */
-    public function testPDOExeption()
+    public function testPDOExeption() : void
     {
+        $this->expectException(PDOException::class);
         $array = array(
                   'dsn'         => 'pdo:::::',
                   'username'    => '',
@@ -98,7 +100,7 @@ class CDatabaseTest extends TestCase
      *
      * @return void
      */
-    public function testCreateTable()
+    public function testCreateTable() : void
     {
         $sql = 'CREATE TABLE test (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, age INTEGER, text VARCHAR(20))';
         $res = $this->_db->execute($sql);
@@ -110,7 +112,7 @@ class CDatabaseTest extends TestCase
      *
      * @return void
      */
-    public function testExecuteQueryFetchAll()
+    public function testExecuteQueryFetchAll() : void
     {
         $this->markTestIncomplete('Not written yet.');
     }
@@ -120,7 +122,7 @@ class CDatabaseTest extends TestCase
      *
      * @return void
      */
-    public function testExecuteQueryFetch()
+    public function testExecuteQueryFetch() : void
     {
         $this->markTestIncomplete('Not written yet.');
     }
