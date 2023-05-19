@@ -2,9 +2,9 @@ name: GitHub Actions
 
 on:
     push:
-        branches: [master]
+        branches: [main]
     pull_request:
-        branches: [master]
+        branches: [main]
 
 jobs:
     tests:
@@ -15,7 +15,7 @@ jobs:
                 php-versions: ["8.1", "8.2"]
 
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v3
 
             # - name: Validate composer.json and composer.lock
             #   run: composer validate --strict
@@ -28,7 +28,7 @@ jobs:
 
             - name: Cache Composer packages
               id: composer-cache
-              uses: actions/cache@v2
+              uses: actions/cache@v3
               with:
                   path: vendor
                   key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
