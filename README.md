@@ -26,7 +26,13 @@ $ make database
 ### Build
 
 ```bash
-docker build -t tournament_bet .
+docker build -t tournament_bet_img .
+```
+
+### Run
+
+```bash
+ docker run -d -p 4000:80 --name tournament_bet tournament_bet_img
 ```
 
 © Markus Thulin 2016-
