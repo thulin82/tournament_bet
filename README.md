@@ -12,7 +12,7 @@
 #### Dependencies
 
 ```
-$ make composer-install
+$ composer install
 ```
 
 #### Run database migrations and seed with test data
