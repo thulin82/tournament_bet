@@ -5,28 +5,28 @@ class CDatabase
     /**
      * Options array
      *
-     * @var array $options Should contain a description
+     * @var array $options Array with options
      */
     protected $options;
 
     /**
      * The PDO object
      *
-     * @var mixed $db      Should contain a description
+     * @var mixed $db The PDO object
      */
     private $db = null;
 
     /**
      * The statement
      *
-     * @var mixed $stmt    Should contain a description
+     * @var mixed $stmt The SQL statement
      */
     private $stmt = null;
 
     /**
-     * [__construct description]
+     * Constructor
      *
-     * @param array $options [description]
+     * @param array $options Array with options
      */
     public function __construct(array $options)
     {
@@ -66,11 +66,11 @@ class CDatabase
      * Execute
      *
      * @param string $query  Query to execute
-     * @param array  $params [description]
+     * @param array  $params Array with parameters
      *
      * @return array $res
      */
-    public function execute(string $query, array $params = array())
+    public function execute(string $query, array $params = array()) : array
     {
         $this->stmt = $this->db->prepare($query);
         $res = $this->stmt->execute($params);
@@ -82,11 +82,11 @@ class CDatabase
      * ExecuteQueryFetchAll
      *
      * @param string $query  Query to execute
-     * @param array  $params [description]
+     * @param array  $params Array with parameters
      *
      * @return array $res
      */
-    public function executeQueryFetchAll(string $query, array $params = array())
+    public function executeQueryFetchAll(string $query, array $params = array()) : array
     {
         $this->stmt = $this->db->prepare($query);
         $this->stmt->execute($params);
@@ -98,11 +98,11 @@ class CDatabase
      * ExecuteQueryFetch
      *
      * @param string $query  Query to execute
-     * @param array  $params [description]
+     * @param array  $params Array with parameters
      *
      * @return mixed $res
      */
-    public function executeQueryFetch(string $query, array $params = array())
+    public function executeQueryFetch(string $query, array $params = array()) : mixed
     {
         $this->stmt = $this->db->prepare($query);
         $this->stmt->execute($params);
