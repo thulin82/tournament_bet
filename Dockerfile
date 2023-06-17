@@ -10,5 +10,7 @@ RUN mv composer /usr/local/bin/
 COPY . /var/www/html/
 WORKDIR /var/www/html/
 RUN composer install
-RUN make database
+RUN vendor/bin/phinx rollback -e development -t 0
+RUN vendor/bin/phinx migrate -e development
+RUN vendor/bin/phinx seed:run -e development
 EXPOSE 80

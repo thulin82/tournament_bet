@@ -18,7 +18,9 @@ $ composer install
 #### Run database migrations and seed with test data
 
 ```
-$ make database
+$ vendor/bin/phinx rollback -e development -t 0
+$ vendor/bin/phinx migrate -e development
+$ vendor/bin/phinx seed:run -e development
 ```
 
 ## Docker
