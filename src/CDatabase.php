@@ -68,9 +68,9 @@ class CDatabase
      * @param string $query  Query to execute
      * @param array  $params Array with parameters
      *
-     * @return array $res
+     * @return bool $res
      */
-    public function execute(string $query, array $params = array()) : array
+    public function execute(string $query, array $params = array()) : bool
     {
         $this->stmt = $this->db->prepare($query);
         $res = $this->stmt->execute($params);
