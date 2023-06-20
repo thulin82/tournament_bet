@@ -25,7 +25,7 @@
         }
     },
     "scripts": {
-        "post-update-cmd": [
+        "post-install-cmd": [
             "rm -rf webroot/bootstrap",
             "cp -R vendor/twbs/bootstrap/dist webroot/bootstrap"
         ]
