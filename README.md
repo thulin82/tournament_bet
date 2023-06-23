@@ -37,4 +37,8 @@ docker build -t tournament_bet_img .
 docker run -d -p 4000:80 --name tournament_bet tournament_bet_img
 ```
 
+## Sample file
+
+A sample webroot/index.php file is provided. Remove it when you have created your own.
+
 © Markus Thulin 2016-
