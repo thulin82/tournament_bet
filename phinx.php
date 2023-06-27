@@ -12,17 +12,17 @@ return
                      'production'              => [
                                                    'adapter' => 'sqlite',
                                                    'name'    => 'db/tournament',
-                                                   'suffix'  => '.sqlite'
+                                                   'suffix'  => '.sqlite',
                                                   ],
                      'development'             => [
                                                    'adapter' => 'sqlite',
                                                    'name'    => 'db/tournament',
-                                                   'suffix'  => '.sqlite'
+                                                   'suffix'  => '.sqlite',
                                                   ],
                      'testing'                 => [
                                                    'adapter' => 'sqlite',
                                                    'name'    => 'db/tournament',
-                                                   'suffix'  => '.sqlite'
+                                                   'suffix'  => '.sqlite',
                                                   ],
                     ],
  'version_order' => 'creation',
