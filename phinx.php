@@ -11,15 +11,18 @@ return
                      'default_database'        => 'development',
                      'production'              => [
                                                    'adapter' => 'sqlite',
-                                                   'name'    => 'db/tournament.sqlite',
+                                                   'name'    => 'db/tournament',
+                                                   'suffix'  => '.sqlite'
                                                   ],
                      'development'             => [
                                                    'adapter' => 'sqlite',
-                                                   'name'    => 'db/tournament.sqlite',
+                                                   'name'    => 'db/tournament',
+                                                   'suffix'  => '.sqlite'
                                                   ],
                      'testing'                 => [
                                                    'adapter' => 'sqlite',
-                                                   'name'    => 'db/tournament.sqlite',
+                                                   'name'    => 'db/tournament',
+                                                   'suffix'  => '.sqlite'
                                                   ],
                     ],
  'version_order' => 'creation',
