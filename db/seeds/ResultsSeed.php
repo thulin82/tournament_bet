@@ -2,7 +2,7 @@
 
 use Phinx\Seed\AbstractSeed;
 
-class TournamentSeed extends AbstractSeed
+class ResultsSeed extends AbstractSeed
 {
     public function run() : void
     {

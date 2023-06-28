@@ -4,63 +4,44 @@ use Phinx\Migration\AbstractMigration;
 
 class InitDatabase extends AbstractMigration
 {
-    /**
-     * Change Method.
-     *
-     * Write your reversible migrations using this method.
-     *
-     * More information on writing migrations is available here:
-     * http://docs.phinx.org/en/latest/migrations.html#the-abstractmigration-class
-     *
-     * The following commands can be used in this method and Phinx will
-     * automatically reverse them when rolling back:
-     *
-     *    createTable
-     *    renameTable
-     *    addColumn
-     *    renameColumn
-     *    addIndex
-     *    addForeignKey
-     *
-     * Remember to call "create()" or "update()" and NOT "save()" when working
-     * with the Table class.
-     */
     public function change()
     {
-        //Create the first table
+        //Create the Bets table
         $table = $this->table('Bets');
-        $table->addColumn('Matchesid', 'integer')
-              ->addColumn('Userid', 'integer')
-              ->addColumn('betChar', 'string')
-              ->addColumn('betResult', 'string')
+        $table->addColumn('user_id', 'integer')
+              ->addColumn('match_id', 'integer')
+              ->addColumn('bet', 'string')
               ->create();
               
-        //Create the second table
+        //Create the Matches table
         $table2 = $this->table('Matches');
-        $table2->addColumn('Tournamentid', 'integer')
-               ->addColumn('dateMatchDate', 'datetime')
-               ->addColumn('idTeamHome', 'integer')
-               ->addColumn('idTeamAway', 'integer')
-               ->addColumn('idGoalsHome', 'integer')
-               ->addColumn('idGoalsAway', 'integer')
+        $table2->addColumn('tournament_id', 'integer')
+               ->addColumn('team1_id', 'integer')
+               ->addColumn('team2_id', 'integer')
+               ->addColumn('match_date', 'datetime')
                ->create();
                
-        //Create the third table
+        //Create the Teams table
         $table3 = $this->table('Teams');
-        $table3->addColumn('nameTeam', 'string')
-               ->addColumn('flagTeam', 'string')
+        $table3->addColumn('name', 'string')
                ->create();
                
-        //Create the fourth table
+        //Create the Tournament table
         $table4 = $this->table('Tournament');
-        $table4->addColumn('nameTournament', 'string')
+        $table4->addColumn('name', 'string')
                ->create();
                
-        //Create the fifth table
-        $table3 = $this->table('User');
-        $table3->addColumn('userName', 'string')
-               ->addColumn('userMail', 'string')
-               ->addColumn('userSecret', 'string')
+        //Create the Users table
+        $table5 = $this->table('Users');
+        $table5->addColumn('name', 'string')
+               ->addColumn('email', 'string')
+               ->addColumn('password', 'string')
+               ->create();
+
+       //Create the Results table
+        $table6 = $this->table('Results');
+        $table6->addColumn('match_id', 'integer')
+               ->addColumn('result', 'string')
                ->create();
     }
 }
