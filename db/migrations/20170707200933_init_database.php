@@ -47,6 +47,7 @@ class InitDatabase extends AbstractMigration
         $table6 = $this->table('Results');
         $table6->addColumn('match_id', 'integer')
                ->addColumn('result', 'string')
+               ->addForeignKey('match_id', 'Matches', 'id')
                ->create();
     }
 }
