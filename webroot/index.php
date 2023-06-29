@@ -33,7 +33,7 @@ require "config.php";
         <?php
         $db = new CDatabase($db_options);
         $db->connect();
-        $sql = 'SELECT * FROM User WHERE id=?';
+        $sql = 'SELECT * FROM Users WHERE id=?';
         $param = array(5);
         $res = $db->executeQueryFetch($sql, $param);
         prePrint($res);
