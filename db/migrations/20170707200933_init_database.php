@@ -21,6 +21,9 @@ class InitDatabase extends AbstractMigration
                ->addColumn('team1_id', 'integer')
                ->addColumn('team2_id', 'integer')
                ->addColumn('match_date', 'datetime')
+               ->addForeignKey('tournament_id', 'Tournament', 'id')
+               ->addForeignKey('team1_id', 'Teams', 'id')
+               ->addForeignKey('team2_id', 'Teams', 'id')
                ->create();
                
         //Create the Teams table
