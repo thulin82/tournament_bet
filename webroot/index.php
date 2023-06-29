@@ -33,10 +33,17 @@ require "config.php";
         <?php
         $db = new CDatabase($db_options);
         $db->connect();
-        $sql = 'SELECT * FROM Users WHERE id=?';
-        $param = array(5);
-        $res = $db->executeQueryFetch($sql, $param);
-        prePrint($res);
+        $sql = 'SELECT m.id, t.name AS tournament_name, tm1.name AS team1_name, tm2.name AS team2_name, m.match_date
+                FROM matches m
+                INNER JOIN tournament t ON m.tournament_id = t.id
+                INNER JOIN teams tm1 ON m.team1_id = tm1.id
+                INNER JOIN teams tm2 ON m.team2_id = tm2.id
+                WHERE m.tournament_id = ?';
+        $param = array(1);
+        $res = $db->executeQueryFetchAll($sql, $param);
+        foreach ($res as $row) {
+            prePrint($row);
+        }
         ?>
     </code>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
