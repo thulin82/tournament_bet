@@ -6,4 +6,4 @@ coverage.clover
 report
 
 #Bootstrap files
-webroot/bootstrap/*
+public/bootstrap/*
