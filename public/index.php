@@ -1,5 +1,5 @@
 <?php
-require "config.php";
+require_once '../src/bootstrap.php';
 ?>
 
 <!doctype html>

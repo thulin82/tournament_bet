@@ -20,10 +20,10 @@ ini_set('display_errors', 1);
 ini_set('output_buffering', 0);
 
 // Include bootstrapping functions.
-require '../src/bootstrap.php';
+//require '../src/bootstrap.php';
 
 // Include autoloader.
-require '../vendor/autoload.php';
+//require '../vendor/autoload.php';
 
 // Start the session.
 session_name(preg_replace('/[^a-z\d]/i', '', __DIR__));
@@ -34,3 +34,10 @@ $db_options['dsn']         = 'sqlite:../db/tournament.sqlite';
 $db_options['username']    = '';
 $db_options['password']    = '';
 $db_options['fetch_style'] = PDO::FETCH_OBJ;
+
+//App Root
+define('APPROOT', dirname(dirname(__FILE__)));
+// URL Root
+define('URLROOT', 'http://localhost:8000/PHP-MVC-Framework');
+// Application Name
+define('APPNAME', 'PHP MVC Framework');

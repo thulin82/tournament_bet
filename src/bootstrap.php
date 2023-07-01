@@ -1,4 +1,18 @@
 <?php
+
+require_once 'config/config.php';
+
+/**
+ * Autoloader for classes.
+ *
+ * @param mixed $className The name of the class.
+ *
+ * @return void
+ */
+spl_autoload_register(function($className){
+    require_once $className . '.php';
+});
+
 /**
  * Exception handler.
  *
