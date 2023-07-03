@@ -2,13 +2,7 @@
 
 require_once 'config/config.php';
 
-
-// Autoloader for classes.
-spl_autoload_register(
-    function ($className) {
-        include_once $className . '.php';
-    }
-);
+require_once '../vendor/autoload.php';
 
 /**
  * Exception handler.
