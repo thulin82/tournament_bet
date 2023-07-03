@@ -2,7 +2,7 @@
 
 use \PHPUnit\Framework\TestCase;
 
-class CDatabaseTest extends TestCase
+class DatabaseTest extends TestCase
 {
     /**
      * Database description
@@ -24,7 +24,7 @@ class CDatabaseTest extends TestCase
                   'password'    => '',
                   'fetch_style' => PDO::FETCH_OBJ,
                  );
-        $this->_db = new CDatabase($array);
+        $this->_db = new Database($array);
         $this->_db->connect();
     }
     
@@ -47,7 +47,7 @@ class CDatabaseTest extends TestCase
     {
         $db = $this->_db->connect();
         $db = $this->_db->connect();
-        $this->assertInstanceOf("CDatabase", $db);
+        $this->assertInstanceOf("Database", $db);
     }
 
     /**
@@ -57,8 +57,8 @@ class CDatabaseTest extends TestCase
      */
     public function testCreateObject() : void
     {
-        $db = new CDatabase([]);
-        $this->assertInstanceOf("CDatabase", $db);
+        $db = new Database([]);
+        $this->assertInstanceOf("Database", $db);
     }
 
     /**
@@ -71,7 +71,7 @@ class CDatabaseTest extends TestCase
     public function testMissingDSN() : void
     {
         $this->expectException(Exception::class);
-        $db = new CDatabase([]);
+        $db = new Database([]);
         $db->connect();
     }
 
@@ -91,7 +91,7 @@ class CDatabaseTest extends TestCase
                   'password'    => '',
                   'fetch_style' => PDO::FETCH_OBJ,
                  );
-        $db = new CDatabase($array);
+        $db = new Database($array);
         $db->connect();
     }
 

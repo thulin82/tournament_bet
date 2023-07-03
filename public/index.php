@@ -31,7 +31,7 @@ require_once '../src/bootstrap.php';
     </nav>
     <code>
         <?php
-        $db = new CDatabase($db_options);
+        $db = new Database($db_options);
         $db->connect();
         $sql = 'SELECT m.id, t.name AS tournament_name, tm1.name AS team1_name, tm2.name AS team2_name, m.match_date
                 FROM matches m

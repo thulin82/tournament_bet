@@ -1,6 +1,6 @@
 <?php
 
-class CDatabase
+class Database
 {
     /**
      * Options array
