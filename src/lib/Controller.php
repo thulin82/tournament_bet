@@ -19,7 +19,7 @@ class Controller
      * View
      *
      * @param string $view View
-     * @param array $data Data
+     * @param array  $data Data
      *
      * @return void
      */
