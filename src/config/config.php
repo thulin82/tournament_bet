@@ -32,6 +32,6 @@ $db_options['fetch_style'] = PDO::FETCH_OBJ;
 // App Root.
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL Root.
-define('URLROOT', 'http://localhost:4000/');
+define('URLROOT', 'http://localhost:4000');
 // Application Name.
 define('APPNAME', 'Tournament Bet');
