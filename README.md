@@ -2,6 +2,8 @@
 
 [![GitHub Actions](https://github.com/thulin82/tournament_bet/actions/workflows/github-actions.yml/badge.svg)](https://github.com/thulin82/tournament_bet/actions/workflows/github-actions.yml)
 
+Based on [MVC Framework in PHP](https://github.com/thulin82/PHP-MVC-Framework)
+
 ## Requirements
 
 -   [PHP](http://php.net/) - The latest version of PHP is highly recommended
@@ -36,9 +38,5 @@ docker build -t tournament_bet_img .
 ```bash
 docker run -d -p 4000:80 --name tournament_bet tournament_bet_img
 ```
-
-## Sample file
-
-A sample public/index.php file is provided. Remove it when you have created your own.
 
 © Markus Thulin 2016-
