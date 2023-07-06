@@ -28,7 +28,7 @@ class Controller
         if (file_exists('../src/views/' . $view . '.php')) {
             include_once '../src/views/' . $view . '.php';
         } else {
-            die('View does not exist');
+            die('View (' . $view . ') does not exist');
         }
     }
 }
