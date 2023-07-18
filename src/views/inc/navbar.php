@@ -14,6 +14,23 @@
           <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">About</a>
         </li>
       </ul>
+      <ul class="navbar-nav ms-auto">
+      <?php if(isset($_SESSION['user_id'])) : ?>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Logged in as <?php echo $_SESSION['user_name']; ?></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo URLROOT; ?>/users/logout">Logout</a>
+        </li>
+      <?php else: ?>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo URLROOT; ?>/users/register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">Login</a>
+        </li>
+      <?php endif; ?>
+      </ul>
     </div>
   </div>
 </nav>
