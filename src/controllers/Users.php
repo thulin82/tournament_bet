@@ -3,6 +3,8 @@ class Users extends Controller
 {
     /**
      * UserModel
+     *
+     * @var object $userModel
      */
     private $userModel;
 
