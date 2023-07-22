@@ -23,7 +23,8 @@ class Users extends Controller
      *
      * @return void
      */
-    public function logout() {
+    public function logout()
+    {
         unset($_SESSION['user_id']);
         unset($_SESSION['user_email']);
         unset($_SESSION['user_name']);
