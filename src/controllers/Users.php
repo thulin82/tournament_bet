@@ -68,7 +68,6 @@ class Users extends Controller
                      'email_err'    => '',
                      'password_err' => '',
                     ];
-
             $this->view('users/login', $data);
         }//end if
     }
