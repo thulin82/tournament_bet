@@ -29,6 +29,11 @@ $db_options['username']    = '';
 $db_options['password']    = '';
 $db_options['fetch_style'] = PDO::FETCH_OBJ;
 
+define ('DB_HOST', 'sqlite:../db/tournament.sqlite');
+define ('DB_USERNAME', '');
+define ('DB_PASSWORD', '');
+define ('DB_FETCH_STYLE', PDO::FETCH_OBJ);
+
 // App Root.
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL Root.

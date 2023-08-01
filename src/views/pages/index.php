@@ -6,8 +6,8 @@
         </div>
     </div>
     <?php
-    foreach ($data['matches'] as $row) {
+/*     foreach ($data['matches'] as $row) {
         prePrint($row);
-    }
+    } */
     ?>
 <?php require APPROOT . '/views/inc/footer.php';
