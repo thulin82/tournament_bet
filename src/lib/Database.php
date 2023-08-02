@@ -26,4 +26,40 @@ class Database
             echo $this->error;
         }
     }
+
+    public function query($sql)
+    {
+        try{
+            $this->stmt = $this->dbh->prepare($sql);
+        } catch(PDOException $e){
+            $this->error = $e->getMessage();
+            echo $this->error;
+        }
+    }
+
+    public function bind($param, $value, $type = null)
+    {
+        try{
+            if (is_null($type)) {
+                switch (true) {
+                    case is_int($value):
+                        $type = PDO::PARAM_INT;
+                    break;
+                    case is_bool($value):
+                        $type = PDO::PARAM_BOOL;
+                    break;
+                    case is_null($value):
+                        $type = PDO::PARAM_NULL;
+                    break;
+                    default:
+                        $type = PDO::PARAM_STR;
+                    break;
+                }
+            }
+            $this->stmt->bindValue($param, $value, $type);
+        } catch(PDOException $e){
+            $this->error = $e->getMessage();
+            echo $this->error;
+        }
+    }
 }
