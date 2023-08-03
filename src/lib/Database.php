@@ -62,4 +62,46 @@ class Database
             echo $this->error;
         }
     }
+
+    public function execute()
+    {
+        try{
+            return $this->stmt->execute();
+        } catch(PDOException $e){
+            $this->error = $e->getMessage();
+            echo $this->error;
+        }
+    }
+
+    public function resultSet()
+    {
+        try{
+            $this->execute();
+            return $this->stmt->fetchAll($this->fetch_style);
+        } catch(PDOException $e){
+            $this->error = $e->getMessage();
+            echo $this->error;
+        }
+    }
+
+    public function single()
+    {
+        try{
+            $this->execute();
+            return $this->stmt->fetch($this->fetch_style);
+        } catch(PDOException $e){
+            $this->error = $e->getMessage();
+            echo $this->error;
+        }
+    }
+
+    public function rowCount()
+    {
+        try{
+            return $this->stmt->rowCount();
+        } catch(PDOException $e){
+            $this->error = $e->getMessage();
+            echo $this->error;
+        }
+    }
 }
