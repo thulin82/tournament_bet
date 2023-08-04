@@ -1,6 +1,8 @@
 <?php
 class Pages extends Controller
 {
+    public $userModel;
+
     /**
      * Constructor
      *
@@ -8,6 +10,7 @@ class Pages extends Controller
      */
     public function __construct()
     {
+        $this->userModel = $this->model('Page');
     }
 
     /**
@@ -17,21 +20,11 @@ class Pages extends Controller
      */
     public function index()
     {
-        $db = new Database();
-/*         $db->connect();
-        $sql = 'SELECT m.id, t.name AS tournament_name, tm1.name AS team1_name, tm2.name AS team2_name, m.match_date
-                FROM matches m
-                INNER JOIN tournament t ON m.tournament_id = t.id
-                INNER JOIN teams tm1 ON m.team1_id = tm1.id
-                INNER JOIN teams tm2 ON m.team2_id = tm2.id
-                WHERE m.tournament_id = ?';
-        $param = array(1);
-        $res = $db->executeQueryFetchAll($sql, $param); */
-
+        $res = $this->userModel->listMatchesByTournament(1);
         $data = [
                  'title'       => 'Index',
                  'description' => 'Tournament Bet',
-                 'matches'     => '',
+                 'matches'     => $res,
                 ];
 
         $this->view('pages/index', $data);
