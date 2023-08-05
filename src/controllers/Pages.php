@@ -1,6 +1,11 @@
 <?php
 class Pages extends Controller
 {
+    /**
+     * The user model
+     *
+     * @var object $userModel
+     */
     public $userModel;
 
     /**
