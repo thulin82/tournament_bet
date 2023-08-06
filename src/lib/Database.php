@@ -83,8 +83,10 @@ class Database
      * @param string $sql The sql query
      *
      * @return void
+     *
+     * @throws PDOException If an error occurs while preparing the query.
      */
-    public function query($sql)
+    public function query($sql) : void
     {
         try {
             $this->stmt = $this->dbh->prepare($sql);
@@ -95,44 +97,59 @@ class Database
     }
 
     /**
-     * Bind
+     * Bind a parameter to the prepared statement.
      *
-     * @param string $param The parameter
-     * @param string $value The value
-     * @param string $type  The type
+     * @param string $param The parameter placeholder in the query string.
+     * @param mixed  $value The value to bind to the parameter.
+     * @param int    $type  The data type of the parameter.
      *
      * @return void
+     *
+     * @throws PDOException If an error occurs while binding the parameter.
      */
-    public function bind($param, $value, $type = null)
+    public function bind(string $param, $value, int $type = null): void
     {
+        if ($type === null) {
+            $type = self::getPdoType($value);
+        }
+
         try {
-            if (is_null($type)) {
-                switch (true) {
-                    case is_int($value):
-                        $type = PDO::PARAM_INT;
-                    break;
-                    case is_bool($value):
-                        $type = PDO::PARAM_BOOL;
-                    break;
-                    case is_null($value):
-                        $type = PDO::PARAM_NULL;
-                    break;
-                    default:
-                        $type = PDO::PARAM_STR;
-                    break;
-                }
-            }
             $this->stmt->bindValue($param, $value, $type);
         } catch (PDOException $e) {
-            $this->error = $e->getMessage();
-            echo $this->error;
-        }//end try
+            throw new PDOException("Error binding parameter '{$param}': " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Get the PDO data type for a given value.
+     *
+     * @param mixed $value The value to get the data type for.
+     *
+     * @return int The PDO data type.
+     */
+    private static function getPdoType($value): int
+    {
+        if (is_int($value)) {
+            return PDO::PARAM_INT;
+        }
+
+        if (is_bool($value)) {
+            return PDO::PARAM_BOOL;
+        }
+
+        if (is_null($value)) {
+            return PDO::PARAM_NULL;
+        }
+
+        return PDO::PARAM_STR;
     }
 
     /**
      * Execute
      *
      * @return bool|void
+     *
+     * @throws PDOException If an error occurs while executing the query.
      */
     public function execute()
     {
@@ -148,6 +165,8 @@ class Database
      * Result Set
      *
      * @return array|void
+     *
+     * @throws PDOException If an error occurs while fetching the result set.
      */
     public function resultSet()
     {
@@ -164,6 +183,8 @@ class Database
      * Single
      *
      * @return object|void
+     *
+     * @throws PDOException If an error occurs while fetching the result.
      */
     public function single()
     {
@@ -180,6 +201,8 @@ class Database
      * Row Count
      *
      * @return int|void
+     *
+     * @throws PDOException If an error occurs while counting the rows.
      */
     public function rowCount()
     {
