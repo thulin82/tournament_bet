@@ -36,4 +36,25 @@ class User
             return false;
         }
     }
+
+    /**
+     * Login user
+     *
+     * @param string $email    The email
+     * @param string $password The password
+     *
+     * @return bool|object
+     */
+    public function login($email, $password) : bool|object
+    {
+        $this->db->query("SELECT * FROM users WHERE email = :email");
+        $this->db->bind(':email', $email);
+        $row = $this->db->single();
+
+        if (password_verify($password, $row->password)) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
 }
