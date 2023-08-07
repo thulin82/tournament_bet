@@ -2,11 +2,11 @@
 class Pages extends Controller
 {
     /**
-     * The user model
+     * The page model
      *
-     * @var object $userModel
+     * @var object $pageModel
      */
-    public $userModel;
+    public $pageModel;
 
     /**
      * Constructor
@@ -15,7 +15,7 @@ class Pages extends Controller
      */
     public function __construct()
     {
-        $this->userModel = $this->model('Page');
+        $this->pageModel = $this->model('Page');
     }
 
     /**
@@ -25,7 +25,7 @@ class Pages extends Controller
      */
     public function index()
     {
-        $res = $this->userModel->listMatchesByTournament(1);
+        $res = $this->pageModel->listMatchesByTournament(1);
         $data = [
                  'title'       => 'Index',
                  'description' => 'Tournament Bet',
