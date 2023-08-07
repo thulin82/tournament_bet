@@ -18,6 +18,13 @@ class User
         $this->db = new Database();
     }
 
+    /**
+     * Find user by email
+     *
+     * @param string $email The email
+     *
+     * @return bool
+     */
     public function findUserByEmail($email) : bool
     {
         $this->db->query('SELECT * FROM users WHERE email = :email');
