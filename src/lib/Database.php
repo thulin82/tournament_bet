@@ -196,21 +196,4 @@ class Database
             echo $this->error;
         }
     }
-
-    /**
-     * Row Count
-     *
-     * @return int|void
-     *
-     * @throws PDOException If an error occurs while counting the rows.
-     */
-    public function rowCount()
-    {
-        try {
-            return $this->stmt->rowCount();
-        } catch (PDOException $e) {
-            $this->error = $e->getMessage();
-            echo $this->error;
-        }
-    }
 }
