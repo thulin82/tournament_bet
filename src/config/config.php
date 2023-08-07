@@ -24,11 +24,6 @@ session_name(preg_replace('/[^a-z\d]/i', '', __DIR__));
 session_start();
 
 // Settings for the database.
-$db_options['dsn']         = 'sqlite:../db/tournament.sqlite';
-$db_options['username']    = '';
-$db_options['password']    = '';
-$db_options['fetch_style'] = PDO::FETCH_OBJ;
-
 define('DB_HOST', 'sqlite:../db/tournament.sqlite');
 define('DB_USERNAME', '');
 define('DB_PASSWORD', '');

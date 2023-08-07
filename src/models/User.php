@@ -15,11 +15,6 @@ class User
      */
     public function __construct()
     {
-        $db_options['dsn']         = 'sqlite:../db/tournament.sqlite';
-        $db_options['username']    = '';
-        $db_options['password']    = '';
-        $db_options['fetch_style'] = PDO::FETCH_OBJ;
-
-        $this->db = new Database($db_options);
+        $this->db = new Database();
     }
 }
