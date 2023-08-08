@@ -15,7 +15,7 @@ class Bets extends Controller
      */
     public function __construct()
     {
-        if(!isLoggedIn()){
+        if (!isLoggedIn()) {
             redirect('users/login');
         }
         $this->betModel = $this->model('Bet');
