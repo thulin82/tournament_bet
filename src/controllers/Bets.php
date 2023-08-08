@@ -31,8 +31,8 @@ class Bets extends Controller
         $tournament_name = $this->betModel->getTournamentName(1);
         $tournament_games = $this->betModel->listMatchesByTournament(1);
         $data = [
-                 'title'       => $tournament_name,
-                 'matches'     => $tournament_games,
+                 'title'   => $tournament_name,
+                 'matches' => $tournament_games,
                 ];
 
         $this->view('bets/index', $data);
