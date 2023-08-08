@@ -39,4 +39,19 @@ class Bet
         $res = $this->db->resultSet();
         return $res;
     }
+
+    /**
+     * Get name of tournament
+     *
+     * @param int $id The tournament id
+     *
+     * @return string
+     */
+    public function getTournamentName($id) : string
+    {
+        $this->db->query('SELECT name FROM tournament WHERE id = :id');
+        $this->db->bind(':id', $id);
+        $res = $this->db->single();
+        return $res->name;
+    }
 }
