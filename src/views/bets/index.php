@@ -5,4 +5,9 @@
             <p class="lead"><?php echo $data['description'] ?></p>
         </div>
     </div>
+    <?php
+    foreach ($data['matches'] as $row) {
+        prePrint($row);
+    }
+    ?>
 <?php require APPROOT . '/views/inc/footer.php';

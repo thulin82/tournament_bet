@@ -25,11 +25,9 @@ class Pages extends Controller
      */
     public function index()
     {
-        $res = $this->pageModel->listMatchesByTournament(1);
         $data = [
                  'title'       => 'Index',
                  'description' => 'Tournament Bet',
-                 'matches'     => $res,
                 ];
 
         $this->view('pages/index', $data);

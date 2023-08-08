@@ -13,6 +13,11 @@
         <li class="nav-item">
           <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">About</a>
         </li>
+        <?php if(isset($_SESSION['user_id'])) : ?>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo URLROOT; ?>/bets">Bets</a>
+        </li>
+        <?php endif; ?>
       </ul>
       <ul class="navbar-nav ms-auto">
       <?php if (isset($_SESSION['user_id'])) : ?>
