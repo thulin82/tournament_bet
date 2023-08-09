@@ -54,12 +54,13 @@ class Bet
     public function listMatchesWithBetsByTournamentAndUser($userId, $tournamentId) : array
     {
         $this->db->query(
-            'SELECT m.id, t.name AS tournament_name, tm1.name AS team1_name, tm2.name AS team2_name, m.match_date, b.bet
+            'SELECT m.id, t.name AS tournament_name, tm1.name AS team1_name, tm2.name AS team2_name, m.match_date, b.bet, r.result
             FROM matches m
             INNER JOIN tournament t ON m.tournament_id = t.id
             INNER JOIN teams tm1 ON m.team1_id = tm1.id
             INNER JOIN teams tm2 ON m.team2_id = tm2.id
             INNER JOIN bets b ON m.id = b.match_id AND b.user_id = :userId
+            INNER JOIN results r ON m.id = r.match_id
             WHERE m.tournament_id = :tournamentId'
         );
         $this->db->bind(':userId', $userId);
