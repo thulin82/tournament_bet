@@ -7,7 +7,7 @@
     </div>
     <?php
     foreach ($data['matches'] as $row) {
-    ?>
+        ?>
         <div class="row g-3">
             <div class="col-sm">
                 <?=$row->team1_name?> - <?=$row->team2_name?>
@@ -29,8 +29,8 @@
                     <label class="form-check-label" for="radio2_<?=$row->id?>">2</label>
                 </div>
             </div>
-      </div>
-    <?php
+        </div>
+        <?php
     }//end foreach
     ?>
 <?php require APPROOT . '/views/inc/footer.php';
