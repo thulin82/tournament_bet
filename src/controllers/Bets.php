@@ -28,8 +28,14 @@ class Bets extends Controller
      */
     public function index()
     {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_UNSAFE_RAW);
+            // Proccess form.
+            print_r($_POST);
+        }
+
         $tournament_name = $this->betModel->getTournamentName(1);
-        $tournament_games = $this->betModel->listMatchesByTournament(1);
+        $tournament_games = $this->betModel->listMatchesWithNoBetsByTournamentAndUser(1, 1);
         $data = [
                  'title'   => $tournament_name,
                  'matches' => $tournament_games,
