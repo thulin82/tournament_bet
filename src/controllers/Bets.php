@@ -43,4 +43,21 @@ class Bets extends Controller
 
         $this->view('bets/index', $data);
     }
+
+    /**
+     * Results
+     *
+     * @return void
+     */
+    public function results()
+    {
+        $tournament_name = $this->betModel->getTournamentName(1);
+        $tournament_games = $this->betModel->listMatchesWithBetsByTournamentAndUser(1, 1);
+        $data = [
+                 'title'   => $tournament_name,
+                 'matches' => $tournament_games,
+                ];
+
+        $this->view('bets/results', $data);
+    }
 }

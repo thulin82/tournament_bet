@@ -3,7 +3,7 @@
     <div class="row g-3">
         <div class="col-sm"><h3>Match</h3></div>
         <div class="col-sm"><h3>Date</h3></div>
-        <div class="col-sm"><h3>Result</h3></div>
+        <div class="col-sm"><h3>Bet</h3></div>
     </div>
     <form action="<?php echo URLROOT; ?>/bets/index" method="post">
     <?php

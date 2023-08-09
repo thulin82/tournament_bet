@@ -15,7 +15,10 @@
         </li>
         <?php if (isset($_SESSION['user_id'])) : ?>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT; ?>/bets">Bets</a>
+          <a class="nav-link" href="<?php echo URLROOT; ?>/bets/index">Bets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo URLROOT; ?>/bets/results">Results</a>
         </li>
         <?php endif; ?>
       </ul>
