@@ -13,4 +13,5 @@ RUN composer install
 RUN vendor/bin/phinx rollback -e development -t 0
 RUN vendor/bin/phinx migrate -e development
 RUN vendor/bin/phinx seed:run -e development
+RUN chmod -R 777 db
 EXPOSE 80
