@@ -8,17 +8,17 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT; ?>">Home</a>
+          <a class="nav-link <?php if ($_SERVER['REQUEST_URI'] =='/') {echo 'active';} ?>" href="<?php echo URLROOT; ?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">About</a>
+          <a class="nav-link <?php if ($_SERVER['REQUEST_URI'] == '/pages/about') {echo 'active';} ?>" href="<?php echo URLROOT; ?>/pages/about">About</a>
         </li>
         <?php if (isset($_SESSION['user_id'])) : ?>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT; ?>/bets/index">Bets</a>
+          <a class="nav-link <?php if ($_SERVER['REQUEST_URI'] =='/bets') {echo 'active';} ?>" href="<?php echo URLROOT; ?>/bets">Bets</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT; ?>/bets/results">Results</a>
+          <a class="nav-link <?php if ($_SERVER['REQUEST_URI'] =='/bets/results') {echo 'active';} ?>" href="<?php echo URLROOT; ?>/bets/results">Results</a>
         </li>
         <?php endif; ?>
       </ul>
@@ -32,10 +32,10 @@
         </li>
       <?php else : ?>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT; ?>/users/register">Register</a>
+          <a class="nav-link <?php if ($_SERVER['REQUEST_URI'] =='/users/register') {echo 'active';} ?>" href="<?php echo URLROOT; ?>/users/register">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">Login</a>
+          <a class="nav-link <?php if ($_SERVER['REQUEST_URI'] =='/users/login') {echo 'active';} ?>" href="<?php echo URLROOT; ?>/users/login">Login</a>
         </li>
       <?php endif; ?>
       </ul>
