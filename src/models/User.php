@@ -44,13 +44,14 @@ class User
      *
      * @return bool
      */
-    public function registerUser($data){
+    public function registerUser($data)
+    {
         $this->db->query('INSERT INTO users (name, email, password) VALUES (:name, :email, :password)');
         $this->db->bind(':name', $data['name']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':password', $data['password']);
 
-        if($this->db->execute()){
+        if ($this->db->execute()) {
             return true;
         } else {
             return false;
