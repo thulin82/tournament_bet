@@ -73,6 +73,26 @@ class Users extends Controller
     }
 
     /**
+     * Register
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $data = [
+                 'name'                 => '',
+                 'email'                => '',
+                 'password'             => '',
+                 'confirm_password'     => '',
+                 'name_err'             => '',
+                 'email_err'            => '',
+                 'password_err'         => '',
+                 'confirm_password_err' => '',
+                ];
+        $this->view('users/register', $data);
+    }
+
+    /**
      * Logout user
      *
      * @return void

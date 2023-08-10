@@ -21,7 +21,7 @@
                             <input type="submit" value="Login" class="btn btn-success w-100">
                         </div>
                         <div class="col">
-                            <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-light w-100">Don't have an account?</a>
+                            <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-secondary w-100">Don't have an account?</a>
                         </div>
                     </div>
                 </form>
