@@ -18,22 +18,23 @@
             </div>
             <div class="col-sm">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="id_<?=$row->id?>" id="radio1_<?=$row->id?>" value="1">
-                    <label class="form-check-label" for="radio1_<?=$row->id?>">1</label>
+                    <input class="form-check-input" type="radio" name="<?=$row->id?>" id="radio_1_<?=$row->id?>" value="1">
+                    <label class="form-check-label" for="radio_1_<?=$row->id?>">1</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="id_<?=$row->id?>" id="radioX_<?=$row->id?>" value="X">
-                    <label class="form-check-label" for="radioX_<?=$row->id?>">X</label>
+                    <input class="form-check-input" type="radio" name="<?=$row->id?>" id="radio_X_<?=$row->id?>" value="X">
+                    <label class="form-check-label" for="radio_X_<?=$row->id?>">X</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="id_<?=$row->id?>" id="radio2_<?=$row->id?>" value="2">
-                    <label class="form-check-label" for="radio2_<?=$row->id?>">2</label>
+                    <input class="form-check-input" type="radio" name="<?=$row->id?>" id="radio_2_<?=$row->id?>" value="2">
+                    <label class="form-check-label" for="radio_2_<?=$row->id?>">2</label>
                 </div>
             </div>
         </div>
         <?php
     }//end foreach
     ?>
+    <?php echo (!empty($data['err'])) ?  '<div class="alert alert-warning" role="alert">' . $data['err'] . '</div>' : '';?>
         <div class="row g-3">
             <div class="col-sm"></div>
             <div class="col-sm"></div>
