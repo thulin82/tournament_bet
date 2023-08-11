@@ -60,7 +60,7 @@ class Bet
             INNER JOIN teams tm1 ON m.team1_id = tm1.id
             INNER JOIN teams tm2 ON m.team2_id = tm2.id
             INNER JOIN bets b ON m.id = b.match_id AND b.user_id = :userId
-            INNER JOIN results r ON m.id = r.match_id
+            LEFT JOIN results r ON m.id = r.match_id
             WHERE m.tournament_id = :tournamentId'
         );
         $this->db->bind(':userId', $userId);
@@ -82,5 +82,24 @@ class Bet
         $this->db->bind(':id', $id);
         $res = $this->db->single();
         return $res->name;
+    }
+
+    /**
+     * Store bets
+     *
+     * @param array $data The data
+     *
+     * @return bool
+     */
+    public function storeBets($data) : bool
+    {
+        foreach ($data as $key => $value) {
+            $this->db->query('INSERT INTO bets (user_id, match_id, bet) VALUES (:userId, :matchId, :bet)');
+            $this->db->bind(':userId', 1);
+            $this->db->bind(':matchId', $key);
+            $this->db->bind(':bet', $value);
+            $this->db->execute();
+        }
+        return true;
     }
 }
