@@ -41,6 +41,10 @@ class InitDatabase extends AbstractMigration
         $table5->addColumn('name', 'string')
                ->addColumn('email', 'string')
                ->addColumn('password', 'string')
+               ->addColumn('role_id', 'integer')
+               ->addColumn('group_id', 'integer')
+               ->addForeignKey('role_id', 'Roles', 'id')
+               ->addForeignKey('group_id', 'Groups', 'id')
                ->create();
 
        //Create the Results table
@@ -48,6 +52,18 @@ class InitDatabase extends AbstractMigration
         $table6->addColumn('match_id', 'integer')
                ->addColumn('result', 'string')
                ->addForeignKey('match_id', 'Matches', 'id')
+               ->create();
+
+       //Create the Roles table
+        $table7 = $this->table('Roles');
+        $table7->addColumn('name', 'string')
+               ->create();
+
+       //Create the Groups table
+        $table8 = $this->table('Groups');
+        $table8->addColumn('name', 'string')
+               ->addColumn('admin_id', 'integer')
+               ->addForeignKey('admin_id', 'Users', 'id')
                ->create();
     }
 }
