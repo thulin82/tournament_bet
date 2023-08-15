@@ -94,4 +94,36 @@ class User
 
         return $row;
     }
+
+    /**
+     * Get team name by id
+     *
+     * @param int $id The id
+     *
+     * @return object
+     */
+    public function getTeamName($id)
+    {
+        $this->db->query("SELECT name FROM teams WHERE id = :id");
+        $this->db->bind(':id', $id);
+        $row = $this->db->single();
+
+        return $row;
+    }
+
+    /**
+     * Get role name by id
+     *
+     * @param int $id The id
+     *
+     * @return object
+     */
+    public function getRoleName($id)
+    {
+        $this->db->query("SELECT name FROM roles WHERE id = :id");
+        $this->db->bind(':id', $id);
+        $row = $this->db->single();
+
+        return $row;
+    }
 }
