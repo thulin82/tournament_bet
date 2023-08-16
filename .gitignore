@@ -1,9 +1,12 @@
 # Package handling
 vendor
 
-#Tests
+# Tests
 coverage.clover
 report
 
-#Bootstrap files
+# Bootstrap files
 public/bootstrap/*
+
+# Development
+.vscode/
