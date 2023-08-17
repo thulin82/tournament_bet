@@ -11,6 +11,7 @@ class InitDatabase extends AbstractMigration
         $table->addColumn('user_id', 'integer')
               ->addColumn('match_id', 'integer')
               ->addColumn('bet', 'string')
+              ->addColumn('points', 'integer', ['default' => 0])
               ->addForeignKey('user_id', 'Users', 'id')
               ->addForeignKey('match_id', 'Matches', 'id')
               ->create();
