@@ -5,6 +5,7 @@
         <div class="col-sm"><h3>Date</h3></div>
         <div class="col-sm"><h3>Bet</h3></div>
         <div class="col-sm"><h3>Result</h3></div>
+        <div class="col-sm"><h3>Points</h3></div>
     </div>
     <?php
     foreach ($data['matches'] as $row) {
@@ -21,6 +22,9 @@
             </div>
             <div class="col-sm">
                 <?=$row->result?>
+            </div>
+            <div class="col-sm">
+                <?=$row->points?>
             </div>
         </div>
         <?php
