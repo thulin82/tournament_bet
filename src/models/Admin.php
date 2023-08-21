@@ -1,5 +1,5 @@
 <?php
-class Page
+class Admin
 {
     /**
      * The database object
