@@ -20,4 +20,18 @@ class Admins extends Controller
         }
         $this->adminModel = $this->model('Admin');
     }
+
+    /**
+     * Index
+     *
+     * @return void
+     */
+    public function index()
+    {
+        $data = [
+                 'title'       => 'Admin view',
+                ];
+
+        $this->view('admins/index', $data);
+    }
 }
