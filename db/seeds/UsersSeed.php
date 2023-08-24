@@ -16,13 +16,22 @@ class UsersSeed extends AbstractSeed
             'group_id'      => 1,
 
         ];
-        for ($i = 1; $i < 10; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             $data[] = [
                 'name'      => $faker->name,
                 'email'      => $faker->email,
                 'password'    => password_hash('password' . $i, PASSWORD_DEFAULT),
                 'role_id'      => 2,
                 'group_id'      => 1,
+            ];
+        }
+        for ($i = 0; $i < 5; $i++) {
+            $data[] = [
+                'name'      => $faker->name,
+                'email'      => $faker->email,
+                'password'    => password_hash('password' . $i, PASSWORD_DEFAULT),
+                'role_id'      => 2,
+                'group_id'      => 2,
             ];
         }
         $this->insert('Users', $data);
