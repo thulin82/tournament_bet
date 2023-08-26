@@ -29,7 +29,8 @@ class Admins extends Controller
     public function index()
     {
         $data = [
-                 'title'       => 'Admin view',
+                 'group_name'    => $this->adminModel->getGroupName(1),
+                 'group_members' => $this->adminModel->listUsersInGroup(1),
                 ];
 
         $this->view('admins/index', $data);
