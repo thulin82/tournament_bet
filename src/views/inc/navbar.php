@@ -21,6 +21,11 @@
           <a class="nav-link <?php if ($_SERVER['REQUEST_URI'] =='/bets/results') {echo 'active';} ?>" href="<?php echo URLROOT; ?>/bets/results"><i class="bi bi-trophy me-1"></i>Results</a>
         </li>
         <?php endif; ?>
+        <?php if (isset($_SESSION['user_id']) && $_SESSION['user_role'] == 1) : ?>
+        <li class="nav-item">
+          <a class="nav-link <?php if ($_SERVER['REQUEST_URI'] =='/admins') {echo 'active';} ?>" href="<?php echo URLROOT; ?>/admins"><i class="bi bi-people me-1"></i>Admin</a>
+        </li>
+        <?php endif; ?>
       </ul>
       <ul class="navbar-nav ms-auto">
       <?php if (isset($_SESSION['user_id'])) : ?>
