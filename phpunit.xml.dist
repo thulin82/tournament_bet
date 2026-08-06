@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="test/config.php" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.2/phpunit.xsd">
-  <coverage>
-    <report>
-      <clover outputFile="coverage.clover"/>
-      <html outputDirectory="report" lowUpperBound="35" highLowerBound="70"/>
-    </report>
-  </coverage>
+<phpunit bootstrap="test/config.php"
+         colors="true"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutChangesToGlobalState="true"
+         failOnRisky="true"
+         failOnWarning="true">
   <testsuites>
     <testsuite name="all">
       <directory>test</directory>
