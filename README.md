@@ -6,23 +6,29 @@ Based on [MVC Framework in PHP](https://github.com/thulin82/PHP-MVC-Framework)
 
 ## Requirements
 
--   [PHP](http://php.net/) - The latest version of PHP is highly recommended
--   [Composer](https://getcomposer.org/) - Dependency Manager
+- [PHP](http://php.net/) - The latest version of PHP is highly recommended
+- [Composer](https://getcomposer.org/) - Dependency Manager
 
 ## Install
 
 #### Dependencies
 
-```
-$ composer install
+```bash
+composer install
 ```
 
 #### Run database migrations and seed with test data
 
+```bash
+vendor/bin/phinx rollback -e development -t 0
 ```
-$ vendor/bin/phinx rollback -e development -t 0
-$ vendor/bin/phinx migrate -e development
-$ vendor/bin/phinx seed:run -e development
+
+```bash
+vendor/bin/phinx migrate -e development
+```
+
+```bash
+vendor/bin/phinx seed:run -e development
 ```
 
 ## Docker
