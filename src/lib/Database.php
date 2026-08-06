@@ -107,7 +107,7 @@ class Database
      *
      * @throws PDOException If an error occurs while binding the parameter.
      */
-    public function bind(string $param, $value, int $type = null): void
+    public function bind(string $param, mixed $value, ?int $type = null): void
     {
         if ($type === null) {
             $type = self::getPdoType($value);
